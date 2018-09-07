@@ -4,15 +4,14 @@
 	$(function() {
 		var tweetLink = "https://twitter.com/intent/tweet?text=";
 		var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-		var counter = 0;
+		var prefix = "https://cors-anywhere.herokuapp.com/";
 
 		function getQuote() {
-			$.getJSON(quoteUrl, createTweet);
-			console.log('ONE');
+			$.getJSON(prefix + quoteUrl, createTweet);
+			$.ajaxSetup({ cache: false });
 		}
 
 		function createTweet(input) {
-			console.log('TWO');
 			var data = input[0];
 
 			var quoteText = $(data.content).text().trim();
@@ -22,12 +21,9 @@
 				quoteAuthor = "Unknown author";
 			}
 
-			console.log('THREE');
-
 			var tweetText = "Quote of the day - " + quoteText + ". Author: " + quoteAuthor;
-			if((tweetText.length > 140) && (counter < 30)) {
+			if(tweetText.length > 140) {
 				getQuote();
-				counter++;
 			} else {
 				var tweet = tweetLink + encodeURIComponent(tweetText);
 				$('.quote').text(quoteText);
