@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #4da6ff;
+  color: white;
+  text-align: center;
+}
+
+main {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  height: 100vh;
+  margin: auto;
+  max-width: 800px;
+  padding: 100px 50px;
+}
+
+main h1 {
+  font-weight: 400;
+  font-size: 46px;
+  margin: 0;
+}
+
+main h2, main h3 {
+  font-weight: 400;
+  font-size: 22px;
+}
+
+main button, main a {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: #4da6ff;
+  color: white;
+  font-size: 18px;
+  line-height: 35px;
+  width: 350px;
+  height: 35px;
+  cursor: pointer;
+}
+
+main button:hover, main button:active, main a:hover, main a:active {
+  background-color: white;
+  color: #4da6ff;
+}
+
+main a {
+  text-decoration: none;
+}
+
+main a i {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=style.css.map */
